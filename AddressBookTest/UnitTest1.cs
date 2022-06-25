@@ -28,6 +28,12 @@ namespace AddressBookTest
             addressBookOperations.AddContacts(AddressList);
             DateTime StopDateTimes = DateTime.Now;
             Console.WriteLine("Duration without threads: " + (StopDateTimes - StartDateTime));
+
+
+            DateTime StartDateTimeThread = DateTime.Now;
+            addressBookOperations.AddContactsThread(AddressList);
+            DateTime StopDateTimeThread = DateTime.Now;
+            Console.WriteLine("Duration with threads: " + (StopDateTimeThread - StartDateTimeThread));
         }
     }
 }
